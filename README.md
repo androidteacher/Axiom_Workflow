@@ -11,6 +11,9 @@ axiom-scan alive.txt -m gau | tee gau.out
 
 cat gau.txt | grep -aiE '^http' | grep -aiE '\?' | qsreplace FUZZ > fuzzable_urls.txt
 
+cat fuzzable_urls.txt | grep FUZZ | gf xss | grep -iavE 'pdf|txt|\?l=FUZZ$|\?contry=FUZZ$|\?q=FUZZ$|is/image' > filtered_fuzzable_urls.txt
+
+
 cat fuzzable_urls.txt -m dalfox | tee dalfox_output.txt
 
 
