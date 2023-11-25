@@ -19,7 +19,7 @@ axiom-scan filtered_fuzzable_urls.txt -m dalfox | tee dalfox_output.txt
 
 When finished
 
-axiom-images rm 'BASE-NAME*'
+axiom-rm 'BASE-NAME*'
 
 (Forget this step, and it's instant poverty!)
 
